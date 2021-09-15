@@ -1,0 +1,31 @@
+html {
+background-color: black;
+color: white;
+text-align: center;
+  font-family: serif;
+}
+a {
+color: violet;
+tezt-align: center;
+}
+img {
+max-width: 100%;
+}
+main {
+				text-align: center;
+}
+iframe {
+				max-width: 100%;
+				align: center;
+}
+
+footer {
+				text-align: center;
+}
+main {
+  column-count: 2;
+column-gap: 40px;
+column-rule-style: solid;
+column-rule-width: 1px;
+column-width: 50%;
+}
