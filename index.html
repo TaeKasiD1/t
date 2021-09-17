@@ -44,25 +44,39 @@ debug('trackCustom: ' + action);
 hyperAlbum = {}
 hyperAlbum.artist = "Click Here to Download Free"
 hyperAlbum.albumTitle = "TaeKasiD &#47; re:BOOT"
-hyperAlbum.releaseDate = "July, 9 2021 00:00:00 +0000"
+hyperAlbum.releaseDate = "September, 12 2021 00:00:00 +0000"
+hyperAlbum.daysUntilLive = -5
 hyperAlbum.hyperfollowAlbumId = 9237557
 hyperAlbum.artistNameShortcut = "taekasid"
 hyperAlbum.albumIdShortcut = "reboot"
+hyperAlbum.releaseDateLocalTime = new Date(hyperAlbum.releaseDate);
+hyperAlbum.releaseDateTimeZoneOffsetInMinutes = hyperAlbum.releaseDateLocalTime.getTimezoneOffset();
+hyperAlbum.releaseDateLocalTime = moment(hyperAlbum.releaseDateLocalTime).add(hyperAlbum.releaseDateTimeZoneOffsetInMinutes, 'm').toDate();
+hyperAlbum.minutesUntilLiveInMyLocation = (hyperAlbum.releaseDateLocalTime - new Date)/1000/60;
 </script>
-
+<script>
+function deleteOrRestoreThisPage()
+{
+sweetAlertConfirm('Hide page. Are you sure?','You can unhide it any time.',function(){deleteOrRestoreThisPageReally('delete')},function(){},'warning','Hide','Don\'t hide','redbg');
+}
+function deleteOrRestoreThisPageReally(action)
+{
+window.location.href = '/hyperfollow/hide/?id=9237557&stuff=96AB2B8CBDAC04796DBB26057A0B2F9E&action=' + action;
+}
+</script>
 <title>TaeKasiD &#47; re:BOOT by Click Here to Download Free - TaeKasiD</title>
-<meta name="description" content='Stream "TaeKasiD &#47; re:BOOT" by Click Here to Download Free - TaeKasiD'/>
+<meta name="description" content='Stream "TaeKasiD &#47; re:BOOT" by Click Here to Download Free - Distributed by DistroKid'/>
 <meta property="og:title" content="TaeKasiD &#47; re:BOOT by Click Here to Download Free"/>
 <meta name="Description" content="TaeKasiD &#47; re:BOOT by Click Here to Download Free">
 <meta property="og:description" content="Stream and Save TaeKasiD &#47; re:BOOT - Distributed by DistroKid"/>
 <meta property="og:site_name" content="DistroKid"/>
-<meta property="og:image:url" content="tktv.png"> 
+<meta property="og:image:url" content="s="tktv.png" 
 </head>
 <!-- begin: google analytics OLD -->
 <script type="text/javascript">
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-42863460-1']);
-_gaq.push(['_setDomainName', 'taekasid.xyz']);
+_gaq.push(['_setDomainName', 'distrokid.com']);
 _gaq.push(['_trackPageview']);
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -95,12 +109,12 @@ font-family: "Lato",helvetica,arial;
 {
 background: rgb(0 0 0 / 61%);
 position: relative; 
-width: device-width;
+width: 100%;
 display: flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-max-width: device-width;
+max-width: 660px;
 padding: 40px 20px 30px 20px;
 margin: 0px 20px 0px 20px;
 box-sizing: border-box;
@@ -662,18 +676,8 @@ Click Here to Download Free
 <div class="outer2">
 <div class="inner2" style="z-index: -1;width: 100%;max-width: 700px;overflow: hidden;">
 <div class="theWholeThing">
-<div style="position: relative;padding:0px 20px 0px 20px;box-sizing: border-box;">
-<script src="/js/wavesurfer_pud.js"></script>
-<style>
-wave
-{
-overflow: hidden !important;
-cursor: pointer;
-}
-</style>
-
 <div class="youtubeLoadingBackgroundDark youtubeEmbed hyperShadow" style="margin: 20px;border-radius: 10px;box-sizing: border-box;">
-<iframe style="text-align: centre;" width="200" height="113" src="https://www.youtube.com/embed/7fT34Ulm-fU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="200" height="113" src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_mS8ORSPK0ucI2C0jbt9sx8wXkMemFjFqk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <script>
 function fitYouTubeEmbed()
 {
@@ -807,7 +811,7 @@ Audiomack
 </div>
 </div>
 <span class="dkAd">
-<a style="color: inherit;text-decoration: none;" href="kny.png">
+<a style="color: inherit;text-decoration: none;" href="https://distrokid.com/?ref=presave">
 <div class="finePrint">
 POWERED BY
 </div>
